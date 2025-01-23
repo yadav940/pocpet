@@ -34,10 +34,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            SizedBox(
-              height: size.height * 0.030,
-            ),
             Expanded(
               child: SizedBox(
                 child: SingleChildScrollView(
@@ -141,54 +137,32 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             ],
                           ),
                         ),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Price",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              "\$${widget.product.price}",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     )),
               ),
             ),
             SizedBox(
-              height: size.height * 0.020,
-            ),
-            SizedBox(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Price",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Text(
-                        "\$${widget.product.price}",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Shipping",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Text(
-                        "Free",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: size.height * 0.030,
-                  ),
                   SizedBox(
                     width: size.width,
                     height: size.height * 0.055,
@@ -243,7 +217,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          "Adopt Me (\$${widget.product.price})",
+                          "Adopt Me \u{20B9} (${widget.product.price})",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: size.width * 0.040,
